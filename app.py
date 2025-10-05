@@ -12,6 +12,7 @@ CORS(app)
 CORS(app, origins=["https://plagia-checker.vercel.app/"])
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -80,6 +81,11 @@ def upload_multiple():
         })
 
     return jsonify(results)
+
+@app.route('/')
+def home():
+    return "✅ PlagiaScan Backend is running!"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
