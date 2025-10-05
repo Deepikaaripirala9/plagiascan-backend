@@ -9,7 +9,7 @@ import itertools
 
 app = Flask(__name__)
 CORS(app)
-CORS(app, origins=["https://plagia-checker.vercel.app/"])
+CORS(app, origins=["https://plagia-checker.vercel.app"])
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
 
