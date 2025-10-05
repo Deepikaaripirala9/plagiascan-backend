@@ -1,7 +1,7 @@
 # backend.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-CORS(app, origins=["https://plagia-checker.vercel.app/"])
+
 from werkzeug.utils import secure_filename
 import PyPDF2
 import docx
@@ -9,7 +9,7 @@ import itertools
 
 app = Flask(__name__)
 CORS(app)
-
+CORS(app, origins=["https://plagia-checker.vercel.app/"])
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
 def allowed_file(filename):
