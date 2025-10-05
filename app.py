@@ -1,6 +1,7 @@
 # backend.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+CORS(app, origins=["https://plagia-checker.vercel.app/"])
 from werkzeug.utils import secure_filename
 import PyPDF2
 import docx
